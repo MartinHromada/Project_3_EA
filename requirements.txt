@@ -1,0 +1,13 @@
+bs4==0.0.1
+beautifulsoup4==4.10.0
+soupsieve==2.3.1
+typing==3.7.4.3
+style==1.1.0
+pip==22.0.3
+wheel==0.37.1
+update==0.0.1
+certifi==2021.10.8
+idna==3.3
+urllib3==1.26.8
+setuptools==60.7.1
+requests==2.27.1
