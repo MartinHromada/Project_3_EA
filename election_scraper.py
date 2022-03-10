@@ -80,6 +80,7 @@ def row(link) -> dict:
 
 
 def get_data(link, parsed) -> dict:
+    symbol = r'\xa0'
     data = {
           "Code": link.split("=")[-2].split("&")[0],
           "City": get_city_name(parsed),
@@ -88,6 +89,16 @@ def get_data(link, parsed) -> dict:
           "Valid": parsed.find("td", {"headers": "sa6"}).text
          }
     data.update(find_candidate_parties(parsed))
+    final_data = final(data)
+    return final_data
+
+
+def final(data: dict) -> dict:
+    symbol = "\xa0"
+    for key in data:
+        value = data.get(key)
+        if symbol in value:
+            data[key] = value.split(symbol)[0]+value.split(symbol)[1]
     return data
 
 
