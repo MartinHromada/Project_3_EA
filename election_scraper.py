@@ -80,7 +80,6 @@ def row(link) -> dict:
 
 
 def get_data(link, parsed) -> dict:
-    symbol = r'\xa0'
     data = {
           "Code": link.split("=")[-2].split("&")[0],
           "City": get_city_name(parsed),
